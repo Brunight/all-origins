@@ -35,6 +35,7 @@ async function getRawPage(url, requestMethod, charset) {
   if (error) return processError(error)
 
   const contentLength = Buffer.byteLength(content)
+  console.log({ contentType: response.headers['content-type'] })
   return {
     content,
     contentType: response.headers['content-type'],
